@@ -15,7 +15,7 @@ public:
 	RenderRegion();
 	RenderRegion(int2d dimensions, int2d position);
 	~RenderRegion();
-
+	//dufhduifhdufh
 	bool SetDimensions(int2d dimensions);
 	bool SetPosition(int2d position);
 	bool SetWindow(WINDOW* window);
