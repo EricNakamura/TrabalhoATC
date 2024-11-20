@@ -133,7 +133,38 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="Collider.cpp" />
+    <ClCompile Include="Colliders.cpp" />
+    <ClCompile Include="data_types.h" />
+    <ClCompile Include="Dot.cpp" />
+    <ClCompile Include="Dots.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Fruit.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Ghost.cpp" />
+    <ClCompile Include="Ghosts.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Pacman.cpp" />
+    <ClCompile Include="RenderRegion.cpp" />
     <ClCompile Include="TrabalhoATC.cpp" />
+    <ClCompile Include="UI.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="Collider.h" />
+    <ClInclude Include="Colliders.h" />
+    <ClInclude Include="Dot.h" />
+    <ClInclude Include="Dots.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="Fruit.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Ghost.h" />
+    <ClInclude Include="Ghosts.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="Pacman.h" />
+    <ClInclude Include="RenderRegion.h" />
+    <ClInclude Include="UI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

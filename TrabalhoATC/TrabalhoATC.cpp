@@ -1,12 +1,52 @@
 // TrabalhoATC.cpp : Este arquivo contém a função 'main'. A execução do programa começa e termina ali.
-//
+
+/*
+
+**TIPOS DE DADOS DO PDCURSES**
+
+WINDOW *  pointer to screen representation
+SCREEN *  pointer to terminal descriptor
+bool      boolean data type
+chtype    representation of a character in a window
+cchar_t   the wide-character equivalent of chtype
+attr_t    for WA_-style attributes
+
+*/
 
 #include <iostream>
 #include <curses.h>
+#include "RenderRegion.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	RenderRegion* renderRegion = new RenderRegion({20,20}, {0,0});
+
+	initscr();
+	cbreak();
+	noecho();
+	raw();
+
+    while (true) {
+		if (is_termresized()) {
+			clear();
+			resize_term(0, 0);
+		}
+
+		renderRegion->Update();
+		int ch = getch();
+		switch (ch)
+		{
+		default:
+			mvprintw(2, 2,"Key: %c", ch);
+			break;
+		case 'q':
+			clear();
+			endwin();
+			return 0;
+			break;
+		}
+    }
+    return 0;
 }
 
 // Executar programa: Ctrl + F5 ou Menu Depurar > Iniciar Sem Depuração
