@@ -44,6 +44,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -133,18 +134,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\Character.cpp" />
-    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\GameInterface.cpp" />
-    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\GameLogic.cpp" />
-    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\Ghost.cpp" />
-    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\LinkedList.cpp" />
-    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\teste.cpp" />
-    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\Map.cpp" />
-    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\PacMan.cpp" />
-    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\PDcursesInterface.cpp" />
-    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\Pellets.cpp" />
-    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\PowerPellet.cpp" />
-    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\UIManager.cpp" />
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="Colliders.cpp" />
     <ClCompile Include="data_types.h" />
@@ -158,20 +147,20 @@
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="TrabalhoATC.cpp" />
     <ClCompile Include="UI.cpp" />
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="GameInterface.cpp" />
+    <ClCompile Include="GameLogic.cpp" />
+    <ClCompile Include="Ghost.cpp" />
+    <ClCompile Include="LinkedList.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="PacMan.cpp" />
+    <ClCompile Include="PDcursesInterface.cpp" />
+    <ClCompile Include="Pellets.cpp" />
+    <ClCompile Include="PowerPellet.cpp" />
+    <ClCompile Include="teste.cpp" />
+    <ClCompile Include="UIManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\Character.h" />
-    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\GameInterface.h" />
-    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\GameLogic.h" />
-    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\Ghost.h" />
-    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\LinkedList.h" />
-    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\Map.h" />
-    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\PacMan.h" />
-    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\PDcursesInterface.h" />
-    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\Pellets.h" />
-    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\PowerPellet.h" />
-    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\starter.h" />
-    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\UIManager.h" />
     <ClInclude Include="Collider.h" />
     <ClInclude Include="Colliders.h" />
     <ClInclude Include="Dot.h" />
@@ -182,9 +171,19 @@
     <ClInclude Include="RenderRegion.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="UI.h" />
+    <ClCompile Include="Character.h" />
+    <ClCompile Include="GameInterface.h" />
+    <ClCompile Include="GameLogic.h" />
+    <ClCompile Include="Ghost.h" />
+    <ClCompile Include="LinkedList.h" />
+    <ClCompile Include="Map.h" />
+    <ClCompile Include="PacMan.h" />
+    <ClCompile Include="PDcursesInterface.h" />
+    <ClCompile Include="Pellets.h" />
+    <ClCompile Include="PowerPellet.h" />
+    <ClCompile Include="UIManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\..\..\Downloads\PacMan-master\Map (2).txt" />
     <Text Include="Map.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

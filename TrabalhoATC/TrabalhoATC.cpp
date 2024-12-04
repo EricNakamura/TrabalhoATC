@@ -18,7 +18,7 @@ attr_t    for WA_-style attributes
 #include "RenderRegion.h"
 #include <Windows.h>
 #include "Game.h"
-#include "../../../../Downloads/PacMan-master/GameLogic.h"
+#include "GameLogic.h"
 
 int main()
 {
