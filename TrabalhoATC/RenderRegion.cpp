@@ -1,13 +1,17 @@
 #include "RenderRegion.h"
+#include <exception>
+#include <iostream>
+#include <Windows.h>
+#include <string>
 
 void RenderRegion::initWindow()
 {
 	window = newwin(dimensions.y, dimensions.x, position.y, position.x);
+	wclear(window);
 	wrefresh(window);
-	
 }
 
-RenderRegion::RenderRegion() : dimensions({0,0}), position({0,0})
+RenderRegion::RenderRegion() : dimensions({10,10}), position({0,0})
 {
 	initWindow();
 }
@@ -19,6 +23,14 @@ RenderRegion::RenderRegion(int2d dimensions, int2d position) : dimensions(dimens
 
 RenderRegion::~RenderRegion()
 {
+	delete window;
+}
+
+bool RenderRegion::resize_Term()
+{
+	wresize(window, dimensions.y , dimensions.x);
+	Update();
+	return true;
 }
 
 bool RenderRegion::SetDimensions(int2d dimensions)
@@ -51,24 +63,45 @@ int2d RenderRegion::GetDimensions()
 	return int2d();
 }
 
+
+
 int2d RenderRegion::GetPosition()
 {
-	return int2d();
+	std::string posStr = "Position: (" + std::to_string(position.x) + ", " + std::to_string(position.y) + ")\n";
+	OutputDebugStringA(posStr.c_str());
+	return position;
 }
-
 void RenderRegion::Clear()
 {
+	wclear(window);
+	wrefresh(window);
+}
+
+void RenderRegion::Center()
+{
+	Clear();
+	int boardX, boardY;
+	getmaxyx(stdscr, boardY, boardX);
+	position = { (boardX / 2) - (dimensions.x / 2), (boardY / 2) - (dimensions.y/2) };
+	mvwin(window, position.y, position.x);
+}
+
+void RenderRegion::Centered()
+{
+	center = true;
 }
 
 void RenderRegion::Update()
 {
-	wclear(window);
-	clear();
-	for (int c = 0; c < COLS; c++) {
-		for (int l = 0; l < LINES; l++) {
-			mvwprintw(stdscr, c, l, "X");
-		}
+	if (center)
+	{
+		Center();
 	}
+	Draw();
 	wrefresh(window);
-	refresh();
+}
+
+void RenderRegion::Draw()
+{
+	box(window, 0, 0);
 }

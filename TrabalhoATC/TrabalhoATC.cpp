@@ -16,39 +16,69 @@ attr_t    for WA_-style attributes
 #include <iostream>
 #include <curses.h>
 #include "RenderRegion.h"
+#include <Windows.h>
+#include "Game.h"
+#include "../../../../Downloads/PacMan-master/GameLogic.h"
 
 int main()
 {
-	RenderRegion* renderRegion = new RenderRegion({20,20}, {0,0});
-
 	initscr();
-	cbreak();
+	start_color();
 	noecho();
-	raw();
+	cbreak();
+	curs_set(0);
 
-    while (true) {
-		if (is_termresized()) {
-			clear();
-			resize_term(0, 0);
-		}
+	init_pair(1, COLOR_YELLOW, COLOR_BLACK); // Par 1: Cor de fundo preta, cor de texto amarela
+	init_pair(2, COLOR_BLUE, COLOR_BLACK);   // Par 2: Cor de fundo preta, cor de texto azul
+	init_pair(3, COLOR_CYAN, COLOR_BLACK);   // Par 3: Cor de fundo preta, cor de texto ciano
 
-		renderRegion->Update();
+	//Game* game = new Game();
+	GameLogic game_new;
+
+	/*int MaxX, MaxY;
+	getmaxyx(stdscr, MaxY, MaxX);
+
+	RenderRegion ui = RenderRegion({ MaxX, 2 }, { 0,0 });
+	RenderRegion gameScreen = RenderRegion({ MaxX, MaxY - 2 }, { 0,2 });*/
+
+	//game->addRegion(&ui);
+	//game->addRegion(&gameScreen);
+
+	//game->Run();
+
+	//refresh();
+
+	game_new.initGame();
+
+	while (true) {
+
+		game_new.updateGame();
 		int ch = getch();
-		switch (ch)
-		{
-		default:
-			mvprintw(2, 2,"Key: %c", ch);
-			break;
-		case 'q':
-			clear();
-			endwin();
+		switch (ch) {
+		case 'q': // Sair do jogo
+			game_new.endGame(true);
 			return 0;
+
+		case KEY_UP:
+			game_new.movePacman(0, -1);
+			break;
+
+		case KEY_DOWN:
+			game_new.movePacman(0, 1);
+			break;
+
+		case KEY_LEFT:
+			game_new.movePacman(-1, 0);
+			break;
+
+		case KEY_RIGHT:
+			game_new.movePacman(1, 0);
 			break;
 		}
-    }
-    return 0;
+		system("pause");
+		return 0;
+	}
 }
-
 // Executar programa: Ctrl + F5 ou Menu Depurar > Iniciar Sem Depuração
 // Depurar programa: F5 ou menu Depurar > Iniciar Depuração
 

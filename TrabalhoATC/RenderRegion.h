@@ -4,17 +4,20 @@
 
 class RenderRegion
 {
+private:
 	WINDOW* window;
 	int2d dimensions;
 	int2d position;
+	bool center;
 
-private:
 	void initWindow();
+	void Center();
 
 public:
 	RenderRegion();
 	RenderRegion(int2d dimensions, int2d position);
-	~RenderRegion();
+	virtual ~RenderRegion();
+	bool resize_Term();
 	bool SetDimensions(int2d dimensions);
 	bool SetPosition(int2d position);
 	bool SetWindow(WINDOW* window);
@@ -23,9 +26,10 @@ public:
 	int2d GetDimensions();
 	int2d GetPosition();
 	void Clear();
+	void Centered();
 	virtual void Update();
+	virtual void Draw();
 	
-	
-
+	 
 };
 

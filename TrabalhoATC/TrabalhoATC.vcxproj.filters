@@ -13,99 +13,166 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Engine">
+      <UniqueIdentifier>{92e2a4ce-b7a7-411b-8453-343f94c80ab2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Engine">
+      <UniqueIdentifier>{5ba5aeb4-cc62-4a3b-b2fc-1b6fef4f50fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\main">
+      <UniqueIdentifier>{0d9fcd5b-7845-45fd-ad36-8e871712fc4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\main">
+      <UniqueIdentifier>{ed7bef71-4374-40e3-923e-fccf496f3772}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TrabalhoATC.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="RenderRegion.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="UI.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Map.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Colliders.cpp">
-      <Filter>Arquivos de Origem</Filter>
+    <ClCompile Include="data_types.h">
+      <Filter>Arquivos de Cabeçalho\Engine</Filter>
     </ClCompile>
     <ClCompile Include="Collider.cpp">
-      <Filter>Arquivos de Origem</Filter>
+      <Filter>Arquivos de Origem\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Character.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Pacman.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Ghosts.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Ghost.cpp">
-      <Filter>Arquivos de Origem</Filter>
+    <ClCompile Include="Colliders.cpp">
+      <Filter>Arquivos de Origem\Engine</Filter>
     </ClCompile>
     <ClCompile Include="Dot.cpp">
-      <Filter>Arquivos de Origem</Filter>
+      <Filter>Arquivos de Origem\Engine</Filter>
     </ClCompile>
     <ClCompile Include="Dots.cpp">
-      <Filter>Arquivos de Origem</Filter>
+      <Filter>Arquivos de Origem\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Arquivos de Origem\Engine</Filter>
     </ClCompile>
     <ClCompile Include="Fruit.cpp">
+      <Filter>Arquivos de Origem\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Arquivos de Origem\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderRegion.cpp">
+      <Filter>Arquivos de Origem\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Arquivos de Origem\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="TrabalhoATC.cpp">
+      <Filter>Arquivos de Origem\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>Arquivos de Origem\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScreen.cpp">
+      <Filter>Arquivos de Origem\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\Character.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="data_types.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
+    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\Map.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\GameInterface.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\GameLogic.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\Ghost.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\LinkedList.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\teste.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\PacMan.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\PDcursesInterface.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\Pellets.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\PowerPellet.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\PacMan-master\UIManager.cpp">
+      <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="RenderRegion.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="UI.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
+    <ClInclude Include="Collider.h">
+      <Filter>Arquivos de Cabeçalho\Engine</Filter>
     </ClInclude>
     <ClInclude Include="Colliders.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="Collider.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="Entity.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="Character.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="Pacman.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="Ghosts.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="Ghost.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
+      <Filter>Arquivos de Cabeçalho\Engine</Filter>
     </ClInclude>
     <ClInclude Include="Dot.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
+      <Filter>Arquivos de Cabeçalho\Engine</Filter>
     </ClInclude>
     <ClInclude Include="Dots.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
+      <Filter>Arquivos de Cabeçalho\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Arquivos de Cabeçalho\Engine</Filter>
     </ClInclude>
     <ClInclude Include="Fruit.h">
+      <Filter>Arquivos de Cabeçalho\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Arquivos de Cabeçalho\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderRegion.h">
+      <Filter>Arquivos de Cabeçalho\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Arquivos de Cabeçalho\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>Arquivos de Cabeçalho\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\Character.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\GameInterface.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\GameLogic.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\Ghost.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\LinkedList.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\Map.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\PacMan.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\PDcursesInterface.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\Pellets.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\PowerPellet.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\starter.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\PacMan-master\UIManager.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\Downloads\PacMan-master\Map (2).txt" />
+    <Text Include="Map.txt" />
   </ItemGroup>
 </Project>
