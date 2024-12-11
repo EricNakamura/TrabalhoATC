@@ -1,6 +1,3 @@
-#ifndef MAP_H
-#define MAP_H
-
 #include <vector>
 #include <string>
 #include "RenderRegion.h"
@@ -21,4 +18,3 @@ public:
     int countDots() const;// Retorna o número de pontos restantes no labirinto   
 };
 
-#endif // MAP_H

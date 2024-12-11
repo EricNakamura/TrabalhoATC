@@ -18,6 +18,7 @@ GameLogic::GameLogic() : pacman(2, 2, '@', 2), score(0), lives(3), victory(false
     noecho();
     curs_set(0);
 
+
     // Adiciona fantasmas
     ghosts.emplace_back(10, 10, 'G', 2);
     ghosts.emplace_back(20, 10, 'G', 2);

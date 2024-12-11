@@ -1,12 +1,14 @@
 #include "PacMan.h"
-#define POWER_MODE_DURATION 10 // Modo Power dura 10 segundos
+#define POWER_MODE_DURATION 3 // Modo Power dura 10 segundos
 
 
 
-PacMan::PacMan(int startX, int startY, char symbol, int color)
-    : Character(startX, startY, symbol, color), isInvulnerable(false), invulnerabilityTimer(0), powerMode(false), powerModeStartTime(0), originalColor(color), powerColor(3) {}
+PacMan::PacMan(int2d pos, char symbol, int color)
+    :Character( {pos.x, pos.y}, symbol, color), isInvulnerable(false), invulnerabilityTimer(0), powerMode(false), powerModeStartTime(0), originalColor(color), powerColor(3) {
+    
+}
 
-PacMan::PacMan() : Character(0, 0, '@', 3) { // Um construtor padrão que inicializa o PacMan em (0, 0)
+PacMan::PacMan() : Character({0,0}, '@', 3) { // Um construtor padrão que inicializa o PacMan em (0, 0)
     // Inicialização adicional, se necessário
 }
 
@@ -28,13 +30,12 @@ void PacMan::updateState() {
     }
 }
 void PacMan::move(int dx, int dy, const Map& map) {
-    int newX = x + dx;
-    int newY = y + dy;
+    int2d newPos = {pos.x +dx, pos.y+dy};
 
     // Verifica se o novo local é caminhável
-    if (map.isWalkable(newX, newY)) {
-        x = newX;
-        y = newY;
+    if (map.isWalkable(newPos.x, newPos.y)) {
+        pos.x = newPos.x;
+        pos.y = newPos.y;
     }
 }
 void PacMan::activatePowerMode() { 
@@ -61,8 +62,8 @@ void PacMan::draw(){
 void PacMan::updateState(const Map& map) {
     // Tenta trocar para a direção armazenada (se existir)
     if (queuedDirectionX != 0 || queuedDirectionY != 0) {
-        int queuedX = x + queuedDirectionX;
-        int queuedY = y + queuedDirectionY;
+        int queuedX = pos.x + queuedDirectionX;
+        int queuedY = pos.y + queuedDirectionY;
 
         if (map.isWalkable(queuedX, queuedY)) {
             // Atualiza para a nova direção
@@ -76,12 +77,12 @@ void PacMan::updateState(const Map& map) {
     }
 
     // Move na direção atual
-    int newX = x + currentDirectionX;
-    int newY = y + currentDirectionY;
+    int newX = pos.x + currentDirectionX;
+    int newY = pos.y + currentDirectionY;
 
     if (map.isWalkable(newX, newY)) {
-        x = newX;
-        y = newY;
+        pos.x = newX;
+        pos.y = newY;
     }
     else {
         // Para se encontrar um obstáculo
@@ -95,5 +96,9 @@ void PacMan::queueDirection(int dx, int dy) {
     // Adiciona a direção à fila, se não for a mesma da última direção
     queuedDirectionX = dx;
     queuedDirectionY = dy;
+}
+
+int2d PacMan::GetPos() {
+    return pos;
 }
 

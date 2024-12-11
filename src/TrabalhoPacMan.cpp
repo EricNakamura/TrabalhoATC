@@ -19,6 +19,7 @@ attr_t    for WA_-style attributes
 #include <Windows.h>
 #include "Game.h"
 #include "GameLogic.h"
+#include "Ghost.h"
 
 int main()
 {
@@ -28,11 +29,8 @@ int main()
 	cbreak();
 	curs_set(0);
 
-	init_pair(1, COLOR_YELLOW, COLOR_BLACK); // Par 1: Cor de fundo preta, cor de texto amarela
-	init_pair(2, COLOR_BLUE, COLOR_BLACK);   // Par 2: Cor de fundo preta, cor de texto azul
-	init_pair(3, COLOR_CYAN, COLOR_BLACK);   // Par 3: Cor de fundo preta, cor de texto ciano
-
 	//Game* game = new Game();
+	Ghost* Blinky, Pinky, Inky, Clyde;
 	GameLogic game_new;
 
 	/*int MaxX, MaxY;

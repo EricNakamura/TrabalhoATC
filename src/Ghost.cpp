@@ -2,8 +2,15 @@
 
 
 
-Ghost::Ghost(int startX, int startY, char symbol, int color)
-    : Character(startX, startY, 'G', startColor), state(NORMAL), vulnerableTimer(0), defeated(false), startColor(3) {}
+Ghost::Ghost(int2d pos, char symbol, int color)
+    : Character({pos.x, pos.y}, 'G', color), state(NORMAL), vulnerableTimer(0), defeated(false), color(3) {}
+
+Ghost::Ghost(): Character( { 0,0 }, 'G', 3 ) {
+    
+    state = NORMAL;
+    vulnerableTimer = 0;
+    defeated = false;
+}
 
 
 
@@ -26,19 +33,18 @@ void Ghost::updateState() {
     }
 }
 
-void Ghost::moveAutomatically(const PacMan& pacman, const Map& map, const std::vector<Ghost>& ghosts) {
+void Ghost::moveAutomatically(const PacMan* pacman, const Map& map) {
     // Direções possíveis: cima, baixo, esquerda, direita
     int dx[] = { 0, 0, -1, 1 };  // Direções em X
     int dy[] = { -1, 1, 0, 0 };  // Direções em Y
 
     int melhorX = getX();
     int melhorY = getY();
-    int menorDistancia = std::abs(pacman.getX() - getX()) + std::abs(pacman.getY() - getY());  // Distância inicial
+    int menorDistancia = Distance(pacman, this);
 
     // Testar todas as 4 direções possíveis (cima, baixo, esquerda, direita)
     for (int i = 0; i < 4; ++i) {
-        int novoX = getX() + dx[i];
-        int novoY = getY() + dy[i];
+        int2d novoPos = {getX() + dx[i], getY() + dy[i] };
 
         // Verifica se a posição é válida (caminhável) e dentro dos limites do mapa
         if (map.isWalkable(novoX, novoY)) {
@@ -57,6 +63,8 @@ void Ghost::moveAutomatically(const PacMan& pacman, const Map& map, const std::v
             }
 
             // Calcular a distância até o PacMan
+            int distancia = 
+
             int distancia = std::abs(pacman.getX() - novoX) + std::abs(pacman.getY() - novoY);
 
             // Escolhe a direção mais próxima ao PacMan
@@ -75,9 +83,9 @@ void Ghost::moveAutomatically(const PacMan& pacman, const Map& map, const std::v
 
 void Ghost:: draw() {
 
-    attron(COLOR_PAIR(startColor)); // Aplica a cor
+    attron(COLOR_PAIR(color)); // Aplica a cor
     mvaddch(y, x, sprite);     // Desenha o fantasma na posição (x, y)
-    attroff(COLOR_PAIR(startColor)); // Desativa a cor
+    attroff(COLOR_PAIR(color)); // Desativa a cor
 }
 
 bool Ghost::isDefeated() const {

@@ -10,25 +10,25 @@ class Game
 {
 public:
 	Game();
+	Game(PacMan plr, unsigned int score, unsigned int lives);
 	~Game();
 
 	void Run();
 	void Stop();
-	void addRegion(const RenderRegion* region);
 	bool update();
-	void initGame();
 
 private:
 	bool running = false;
-	Map map;
-	UIManager ui;
-	PacMan pacman;
-	std::list<Ghost> ghosts;
-	std::list<PowerPellet> powerPellets;
+	Map* map;
+	UIManager* ui;
+	PacMan* pacman;
+	std::list<Ghost*> ghosts;
+	std::list<PowerPellet*> powerPellets;
 	unsigned int score;
 	unsigned int lives;
 	bool victory;
 
+	void initGame();
 
 };
 

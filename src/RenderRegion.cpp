@@ -7,7 +7,14 @@
 void RenderRegion::initWindow()
 {
 	window = newwin(dimensions.y, dimensions.x, position.y, position.x);
+	start_color();
+	init_pair( 1, COLOR_YELLOW, COLOR_BLACK ); // Pac-Man original (amarelo)
+	init_pair( 2, COLOR_RED, COLOR_BLACK );    // Fantasmas (vermelhos)
+	init_pair( 3, COLOR_BLUE, COLOR_BLACK );   // Pac-Man no modo Power (azul claro)
+	init_pair( 4, COLOR_GREEN, COLOR_BLACK );   // PowerPellets 
+	curs_set(0);
 	wclear(window);
+
 	wrefresh(window);
 }
 

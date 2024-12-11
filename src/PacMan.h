@@ -1,10 +1,9 @@
-#ifndef PACMAN_H
-#define PACMAN_H
 
 #include "Character.h"
 #include "Map.h"
 #include <ctime> // Para temporizador
 #include "curses.h"
+#include "data_types.h"
 
 class PacMan : public Character {
 private:
@@ -25,7 +24,7 @@ public:
 
     bool powerMode;
     // Construtor
-    PacMan(int startX, int startY, char symbol, int color);
+    PacMan(int2d pos, char symbol, int color);
     PacMan();
 
     // Métodos específicos de Pac-Man
@@ -38,8 +37,8 @@ public:
     void draw();
     void updateState(const Map& map);
     void queueDirection(int dx, int dy);
+    int2d GetPos();
     
 };
 
-#endif // PACMAN_H
 

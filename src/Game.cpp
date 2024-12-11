@@ -1,6 +1,17 @@
 #include "Game.h"
 
+void Game::initGame() {
+	map.loadMap("Map.txt");
+
+}
+
 Game::Game()
+{
+	initGame();
+}
+
+Game::Game( PacMan plr, unsigned int score, unsigned int lives ):
+ pacman(plr), score(score), lives(lives)
 {
 }
 
@@ -18,9 +29,6 @@ void Game::Stop()
 	running = false;
 }
 
-void Game::addRegion(const RenderRegion* region)
-{
-}
 
 bool Game::update()
 {
