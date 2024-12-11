@@ -20,20 +20,6 @@ void Game::Stop()
 
 void Game::addRegion(const RenderRegion* region)
 {
-	renderRegions.push_back(*region);
-}
-
-bool Game::removeRegion(const RenderRegion* region)
-{
-	/*for (RenderRegion& reg : renderRegions)
-	{
-		if (reg == *region)
-		{
-			renderRegions.remove(reg);
-			return true;
-		}
-	}*/
-	return false;
 }
 
 bool Game::update()
@@ -42,9 +28,6 @@ bool Game::update()
 	{
 		return false;
 	}
-	for (auto& region : renderRegions)
-	{
-		region.Update();
-	}
+	map.Update();
 	return true;
 }
